@@ -1,15 +1,15 @@
 package service;
 
 import entreprise.Client;
+import entreprise.Statut;
 
 
 public class ServiceReceptionCommande {
 
 	public static String ReceptionCommande(Client client){
-		
-		return "Bonjour Mr "+client.getNom()+
-				"\nLe projet : "+ client.getProjet().getNom()+  "\nID : "+
-				client.getProjet().getId_projet()+"\na bien été reçu"+
-				"\n------------------------Terminé----------------------";
+		client.getProjet().setStatut(Statut.phase_reception);
+		return "Bonjour "+client.getPrenom()+" "+client.getNom()+
+				"\nLe projet : "+ client.getProjet().getNom()+  
+				"\nID : "+client.getProjet().getId_projet()+" est en phase de : "+client.getProjet().getStatut();
 	}
 }

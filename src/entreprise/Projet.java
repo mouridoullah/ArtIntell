@@ -5,17 +5,17 @@ import java.util.UUID;
 public class Projet {
 	
 	private String id_projet;
-	private Categorie categorie;
+	private DomaineDEtude dEtude;
 	private String nom;
 	private String id_equipe;
 	private Employer chef_projet;
 	private Statut statut;
 	private Taille taille;		
 	
-	public Projet(Categorie categorie, String nom , Taille taille) {
+	public Projet(DomaineDEtude dEtude, String nom , Taille taille) {
 		super();
 		this.id_projet = UUID.randomUUID().toString();
-		this.categorie = categorie;
+		this.dEtude = dEtude;
 		this.nom = nom;
 		this.id_equipe = "";
 		this.chef_projet = null;
@@ -31,12 +31,12 @@ public class Projet {
 		this.id_projet = id_projet;
 	}
 
-	public Categorie getCategorie() {
-		return categorie;
+	public DomaineDEtude getdEtude() {
+		return dEtude;
 	}
 
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
+	public void setdEtude(DomaineDEtude dEtude) {
+		this.dEtude = dEtude;
 	}
 
 	public String getNom() {
@@ -78,6 +78,7 @@ public class Projet {
 	public void setTaille(Taille taille) {
 		this.taille = taille;
 	}
+
 	
 	
 }

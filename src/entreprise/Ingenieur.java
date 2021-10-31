@@ -1,31 +1,20 @@
 package entreprise;
 
-public class Ingenieur extends Employer{
-	Categorie categorie;
+public class Ingenieur extends Developpeur{
 	private boolean chefEquipe;
 
-	public Ingenieur(String nom, String prenom, Categorie categorie) {
-		super(nom, prenom);
-		this.categorie = categorie;
+	public Ingenieur(String nom, String prenom, DomaineDEtude categorie) {
+		super(nom, prenom, categorie);
 		this.chefEquipe = false;
-	}
-
-	public Categorie getCategorie() {
-		return categorie;
-	}
-
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
 	}
 
 	public boolean isChefEquipe() {
 		return chefEquipe;
 	}
 
-	public void setChefEquipe() {
-		this.chefEquipe = !chefEquipe;
+	public void setChefEquipe(boolean chefEquipe) {
+		this.chefEquipe = chefEquipe;
 	}
-
 	
 }
 	

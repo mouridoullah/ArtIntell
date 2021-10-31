@@ -7,10 +7,10 @@ public class ServiceQualification {
 
 public static String Analyse_Simple(Projet projet) {
 		
-		projet.setStatut(Statut.phase_analyse_simple);
+		projet.setStatut(Statut.phase_analyse_sur_qualification);
 		System.out.println("\nTaille : "+projet.getTaille()+
 							"\nStatut : "+projet.getStatut());
-		switch (projet.getCategorie()) {
+		switch (projet.getdEtude()) {
 			case Product_and_application_dévelopment:
 				return "accepté";
 			case Data_Engineering:
@@ -28,7 +28,7 @@ public static String Analyse_Simple(Projet projet) {
 			case Formation_et_transfert_de_connaissances:
 				return "accepté";
 			default:
-				return "refusé";
+				return "refusé, nous ne sommes pas qualifiés pour votre projet";
 			
 		}
 	}

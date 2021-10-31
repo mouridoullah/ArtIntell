@@ -1,20 +1,19 @@
 package entreprise;
 
 public class Developpeur extends Employer{
-	Categorie categorie;
+	DomaineDEtude dEtude;
 
-	public Developpeur(String nom, String prenom, Categorie categorie) {
+	public Developpeur(String nom, String prenom, DomaineDEtude dEtude) {
 		super(nom, prenom);
-		this.categorie = categorie;
+		this.dEtude = dEtude;
 	}
 
-	public Categorie getCategorie() {
-		return categorie;
+	public DomaineDEtude getdEtude() {
+		return dEtude;
 	}
 
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
+	public void setdEtude(DomaineDEtude dEtude) {
+		this.dEtude = dEtude;
 	}
 
-	
 }

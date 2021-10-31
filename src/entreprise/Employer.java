@@ -18,11 +18,11 @@ public abstract class Employer {
 		
 	}
 
-	public String getId_employee() {
+	public String getId_employer() {
 		return id_employee;
 	}
 
-	public void setId_employee(String id_employee) {
+	public void setId_employer(String id_employee) {
 		this.id_employee = id_employee;
 	}
 

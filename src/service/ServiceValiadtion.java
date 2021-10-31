@@ -7,7 +7,8 @@ import entreprise.Ingenieur;
 
 public class ServiceValiadtion {
 	
-	public static String validation(Equipe equipe,String resultat){
+	public static String validation(Equipe equipe, String resultat){
+		
 		int i = 0, j = 0;
 		for (Employer employer : equipe.getListEmployer()) {
 			if (employer.getClass() == Ingenieur.class) i++;

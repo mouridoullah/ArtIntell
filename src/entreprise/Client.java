@@ -14,7 +14,7 @@ public class Client {
 		this.id_Client = UUID.randomUUID().toString();
 		this.nom = nom;
 		this.prenom = prenom;
-		this.projet = new Projet(Categorie.randCategorie(), "Apollo", Taille.ranTaille());
+		this.projet = new Projet(DomaineDEtude.randCategorie(), "Apollo", Taille.ranTaille());
 	}
 
 	public String getId_Client() {

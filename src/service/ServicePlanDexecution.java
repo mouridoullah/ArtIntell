@@ -6,8 +6,8 @@ import entreprise.Statut;
 public class ServicePlanDexecution {
 
 	public static String Analyse_Poussee(Projet projet) {
-		projet.setStatut(Statut.phase_analyse_approfondie);
-		System.out.println("Le projet : "+projet.getNom()+"\nID : "+projet.getId_projet()+"\nStatut : "+projet.getStatut());
+		projet.setStatut(Statut.phase_generation_de_plan);
+		//System.out.println("Le projet : "+projet.getNom()+"\nID : "+projet.getId_projet()+"\nStatut : "+projet.getStatut());
 		switch (projet.getTaille()) {
 			case Petit:
 				return "1 Ingenieur, 3 Developpeurs et 2 semaine";
