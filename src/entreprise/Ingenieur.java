@@ -1,21 +1,32 @@
 package entreprise;
 
-public class Ingenieur extends Employee{
-	Domaine domaine;
+public class Ingenieur extends Employer{
+	Categorie categorie;
+	private boolean chefEquipe;
 
-	public Ingenieur(String nom, String prenom, Domaine domaine) {
+	public Ingenieur(String nom, String prenom, Categorie categorie) {
 		super(nom, prenom);
-		this.domaine = domaine;
+		this.categorie = categorie;
+		this.chefEquipe = false;
 	}
 
-	public Domaine getDomaine() {
-		return domaine;
+	public Categorie getCategorie() {
+		return categorie;
 	}
 
-	public void setDomaine(Domaine domaine) {
-		this.domaine = domaine;
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
 	}
-	
+
+	public boolean isChefEquipe() {
+		return chefEquipe;
+	}
+
+	public void setChefEquipe() {
+		this.chefEquipe = !chefEquipe;
+	}
+
 	
 }
 	
+

@@ -1,32 +1,30 @@
 package entreprise;
 
-
-import java.util.UUID;
 import java.util.List;
+import java.util.UUID;
 
 public class Equipe {
+	private String id_equipe;
+	private Categorie categorie;
+	private String nom;
+	private static String id_chef;
+	private static List<Employer> listEmployer;
+	private static List<Projet> listProjet;
 	
-	String id_equipe;
-	Domaine domaine;
-	String nom;
-	String id_chef;
-	private List<Employee> listEmployee;
-	private List<Projet> listProjet;
-	
-	public Equipe(Domaine domaine, String nom, List<Employee> listEmployee,
-			List<Projet> listProjet) {
+	public Equipe(Categorie categorie, String nom, List<Employer> listEmployer, List<Projet> listProjet) {
 		super();
 		this.id_equipe = UUID.randomUUID().toString();
-		this.domaine = domaine;
+		this.categorie = categorie;
 		this.nom = nom;
-		this.id_chef = UUID.randomUUID().toString();;
-		this.listEmployee = listEmployee;
-		this.listProjet = listProjet;
+		Equipe.listEmployer = listEmployer;
+		Equipe.listProjet = listProjet;
+		
+		setId_chef(listEmployer);
 	}
 	
-	public Employee getRanEmploye() {
-		int index = (int)(Math.random() * listEmployee.size());
-		return listEmployee.get(index);			
+	public Employer getRanEmploye() {
+		int index = (int)(Math.random() * listEmployer.size());
+		return listEmployer.get(index);			
 	}
 
 	public String getId_equipe() {
@@ -37,12 +35,12 @@ public class Equipe {
 		this.id_equipe = id_equipe;
 	}
 
-	public Domaine getDomaine() {
-		return domaine;
+	public Categorie getCategorie() {
+		return categorie;
 	}
 
-	public void setDomaine(Domaine domaine) {
-		this.domaine = domaine;
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
 	}
 
 	public String getNom() {
@@ -57,16 +55,21 @@ public class Equipe {
 		return id_chef;
 	}
 
-	public void setId_chef(String id_chef) {
-		this.id_chef = id_chef;
+	public static void setId_chef(List<Employer> listEmployer) {
+		for (Employer employer : listEmployer) {
+			if(employer.getClass() == Ingenieur.class){
+				id_chef = employer.getId_employee();
+				break;
+			}
+		}
 	}
 
-	public List<Employee> getListEmployee() {
-		return listEmployee;
+	public List<Employer> getListEmployer() {
+		return listEmployer;
 	}
 
-	public void setListEmployee(List<Employee> listEmployee) {
-		this.listEmployee = listEmployee;
+	public void setListEmployee(List<Employer> listEmployee) {
+		Equipe.listEmployer = listEmployee;
 	}
 
 	public List<Projet> getListProjet() {
@@ -74,7 +77,8 @@ public class Equipe {
 	}
 
 	public void setListProjet(List<Projet> listProjet) {
-		this.listProjet = listProjet;
+		Equipe.listProjet = listProjet;
 	}
+	
 	
 }
